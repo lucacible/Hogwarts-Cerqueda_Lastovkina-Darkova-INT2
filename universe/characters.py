@@ -1,1 +1,1 @@
-#Python for characters
+#Python for character creation and management

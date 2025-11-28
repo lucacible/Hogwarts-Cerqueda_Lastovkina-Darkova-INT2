@@ -1,1 +1,1 @@
-#Python for the house
+#Python for choice and management of the house
