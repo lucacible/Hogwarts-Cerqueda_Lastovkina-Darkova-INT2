@@ -1,4 +1,5 @@
 ########################-Python to check user input and reading files, for utility functions-#################################
+import json
 
 def ask_text(message):
     """
@@ -29,33 +30,63 @@ Ouptut: Displays the number entered by the user
 
 
 """
-    number_str = input(message)
-    try:
-        number = int(number_str)
-
-    except ValueError:
-        print("Enter an integer : ")
-        return ask_number(message,min_val,max_val)
-    
-    if min_val != None or max_val != None:
-        if number >= max_val or number <= min_val:
-            print("Enter a number between",min_val,"and",max_val)
+    nb_string=input(message)
+    nb_string=nb_string.strip()
+#We verify if the number is negative or not
+    negative=False
+    if nb_string[0]=="-":
+        negative=True
+        nb_string=nb_string[1:]
+    elif nb_string[0]=="+":
+        nb_string=nb_string[1:]
+        
+#We transform the number from a string into a integer      
+    number=0
+    for dizaine in range(len(nb_string)):
+        number = number * 10 + (ord(nb_string[dizaine])-ord("0"))
+#We verify wether the number is in the boundaries set or not
+    if negative==True:
+        number= (-number)
+    if max_val!=None or min_val!=None:
+        if number>max_val:
+            print("The input number is to high")
+            return ask_number(message,min_val,max_val)
+        elif number<min_val:
+            print("The input number is to low")
             return ask_number(message,min_val,max_val)
         else:
-            return number
-    else:
+            return  number
+    else:      
         return number
         
+            
+
+    
 #print(ask_number("Courage level : ", 1,10))
 
 
 
 def ask_choice(message,options):
+    """
+This function displays a number of options to the user and then asks for the user's choice, which it returns
+Input; the user enters the number of his choice
+Output: returns the user's choice so that it can later used in the main code
+"""
+    print(message)
+    for i in range (len(options)):
+        print(i+1,".",options[i])
+    return ask_number("Your choice :")
     
+
+#print(ask_choice("Do you want to continue?",["Yes", "No"]))
+
     
+def load_file(file_path):
+    with open (file_path, "r",encoding='utf-8')as f:
+        content=json.load(f)
+        return content
     
-    
-    
+#print(load_file("data/houses.json"))
 
 
 
