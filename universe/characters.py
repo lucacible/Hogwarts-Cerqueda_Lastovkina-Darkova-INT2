@@ -2,9 +2,8 @@
 #Python for characters
 def init_character(last_name, first_name, attributes):
     character = {
-    "Personal information": {
         "First Name": first_name,
-        "Last Name": last_name },
+        "Last Name": last_name ,
     "Money": 100, #in galleons
     "Inventory": ['a','b'],
     "Spells": [],
@@ -13,11 +12,9 @@ def init_character(last_name, first_name, attributes):
     return character
 
 def dislay_character(character):
-    for key in character.keys():
-        value = character[key]
-        for subkey,subvalue in value.items():
+        for subkey,subvalue in character.items():
             print("{}: {}".format(subkey,subvalue))
-        for element in value:
+        for element in subvalue:
             text = ", ".join(value)
             print(text)
         print(value)
