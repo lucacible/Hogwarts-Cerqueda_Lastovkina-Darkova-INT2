@@ -27,9 +27,8 @@ This function takes a number entered by the user and verifies
 its validity
 Input: the user enters a number
 Ouptut: Displays the number entered by the user
-
-
 """
+
     nb_string=input(message)
     nb_string=nb_string.strip()
 #We verify if the number is negative or not
