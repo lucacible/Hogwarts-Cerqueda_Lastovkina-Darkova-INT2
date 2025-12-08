@@ -83,7 +83,7 @@ Output: returns the user's choice so that it can later used in the main code
     
 def load_file(file_path):
     """
-
+with this function we can extract the json data in .json files
  """   
     
     with open (file_path, "r",encoding='utf-8')as f:

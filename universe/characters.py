@@ -15,12 +15,14 @@ def dislay_character(character):
         for subkey,subvalue in character.items():
             print("{}: {}".format(subkey,subvalue))
         for element in subvalue:
-            text = ", ".join(value)
+            text = ", ".join(element)
             print(text)
-        print(value)
+        print(element)
 
 
 #test
+"""
 atts = {"power": 150, "speed": 100}
 player = init_character("Darkova", "Dina", atts)
 dislay_character(player)
+"""
