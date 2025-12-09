@@ -5,7 +5,7 @@ def init_character(last_name, first_name, attributes):
         "First Name": first_name,
         "Last Name": last_name ,
     "Money": 100, #in galleons
-    "Inventory": ['a','b'],
+    "Inventory": [],
     "Spells": [],
     "Attributes": attributes
     }
