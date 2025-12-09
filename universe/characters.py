@@ -11,18 +11,18 @@ def init_character(last_name, first_name, attributes):
     }
     return character
 
-def dislay_character(character):
-        for subkey,subvalue in character.items():
-            print("{}: {}".format(subkey,subvalue))
-        for element in subvalue:
-            text = ", ".join(element)
-            print(text)
-        print(element)
+def display_character(character):
+        print("First Name:",character["First Name"])
+        print("Last Name:",character["Last Name"])
+        print("Money:",character["Money"])
+        inventory = ", ".join(character['Inventory'])
+        print('Inventory: ', inventory)
+        spells = ", ".join(character['Spells'])
+        print('Spells: ', spells)
+        print("Attributes: ", character['Attributes'])
 
+def modify_money(character, amount):
+    character['Money'] += amount
 
-#test
-"""
-atts = {"power": 150, "speed": 100}
-player = init_character("Darkova", "Dina", atts)
-dislay_character(player)
-"""
+def add_item(character, key, item):
+    character[key].append(item)
