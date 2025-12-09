@@ -27,9 +27,8 @@ This function takes a number entered by the user and verifies
 its validity
 Input: the user enters a number
 Ouptut: Displays the number entered by the user
-
-
 """
+
     nb_string=input(message)
     nb_string=nb_string.strip()
 #We verify if the number is negative or not
@@ -82,6 +81,10 @@ Output: returns the user's choice so that it can later used in the main code
 
     
 def load_file(file_path):
+    """
+with this function we can extract the json data in .json files
+ """   
+    
     with open (file_path, "r",encoding='utf-8')as f:
         content=json.load(f)
         return content

@@ -2,8 +2,8 @@
 #Python for characters
 def init_character(last_name, first_name, attributes):
     character = {
-    "First Name": first_name,
-    "Last Name": last_name,
+        "First Name": first_name,
+        "Last Name": last_name ,
     "Money": 100, #in galleons
     "Inventory": ['a','b'],
     "Spells": [],
@@ -12,13 +12,17 @@ def init_character(last_name, first_name, attributes):
     return character
 
 def dislay_character(character):
+        for subkey,subvalue in character.items():
+            print("{}: {}".format(subkey,subvalue))
+        for element in subvalue:
+            text = ", ".join(element)
+            print(text)
+        print(element)
 
 
 #test
+"""
 atts = {"power": 150, "speed": 100}
 player = init_character("Darkova", "Dina", atts)
 dislay_character(player)
-
-from utils.input_utils import ask_number
-def modify_money(character, amount):
-    amount = ask_number('Which amount of money?')
+"""
