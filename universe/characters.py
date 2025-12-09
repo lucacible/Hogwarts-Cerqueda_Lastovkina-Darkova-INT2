@@ -12,11 +12,6 @@ def init_character(last_name, first_name, attributes):
     return character
 
 def dislay_character(character):
-    for key,value in character.items():
-        if key == "Inventory" and key == 'Spells':
-            text = ', '.join(key)
-            print(text)
-        print('{}: {}'.format(key,value))
 
 
 #test
