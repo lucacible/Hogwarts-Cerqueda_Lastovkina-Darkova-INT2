@@ -41,6 +41,11 @@ Ouptut: Displays the number entered by the user
         
 #We transform the number from a string into a integer      
     number=0
+    for char in nb_string:
+        if ord(char)<ord("0") or ord(char)>ord("9"):
+            print("This is not a valid number")
+            return ask_number(message,min_val,max_val)
+    
     for dizaine in range(len(nb_string)):
         number = number * 10 + (ord(nb_string[dizaine])-ord("0"))
 #We verify wether the number is in the boundaries set or not
@@ -65,7 +70,7 @@ Ouptut: Displays the number entered by the user
 
 
 
-def ask_choice(message,options):
+def ask_choice(message,options)->int:
     """
 This function displays a number of options to the user and then asks for the user's choice, which it returns
 Input; the user enters the number of his choice
@@ -74,7 +79,7 @@ Output: returns the user's choice so that it can later used in the main code
     print(message)
     for i in range (len(options)):
         print(i+1,".",options[i])
-    return ask_number("Your choice :")
+    return ask_number("Your choice :",1,len(options))
     
 
 #print(ask_choice("Do you want to continue?",["Yes", "No"]))

@@ -1,7 +1,8 @@
 #Chapter 1 of the game
 from utils.input_utils import ask_choice, ask_number, ask_text
-from universe.characters import init_character, dislay_character
+from universe.characters import init_character, display_character,modify_money,add_item
 
+import json
 
 
 
@@ -52,17 +53,18 @@ circle, befitting your magical attributes.
     print(intro_text2)
     input("TYPE ANYTHING TO CONTINUE")
 
-    choice=ask_choice("So what will you do?",
+    choice = ask_choice("So what will you do?",
     ["I will enter the HOGWARTS magic academy",
-    "THIS IS BULLSHIT!!!, not going to your strange place."])
+    "THIS IS BULLSHIT!!!, I'm staying with Uncle."])
     
     
     intro_text3="""
 GOOOOOOOOD, you see you're a smart boy. Welcome to this new life of yours.  
 Now that's done, shouldn't you introduce yourself to this lovely letter???    
 """
-    if choice==2:
-        return("GAME OVER, DUH WHAT DID YOU EXPECT HUH?")
+    if choice== 2 :
+        print("GAME OVER, DUH WHAT DID YOU EXPECT HUH?")
+        exit()
     else:
         print(intro_text3)
 
@@ -87,11 +89,34 @@ def create_character():
     Attributes["Loyalty"]=ask_number("Loyalty level (1-10): ")
     Attributes["Ambition"]=ask_number("Ambition level (1-10): ")
 
-    character=init_character(first_name,last_name,Attributes)
-    print(dislay_character(character))
+    character=init_character(last_name, first_name,Attributes)
+    display_character(character)
 
-introduction()
-create_character()
+#introduction()
+#create_character()
+
+def meet_hagrid(character):
+    hagrid_text="""
+Hagrid: Ohhhh, look how big he is haHaHah...
+        I'll help you make your shopping in Diagon Alley.
+"""
+    choice=ask_choice("Do you want to follow Hagrid?",["Yes","No"])
+    if choice==1:
+        print("All right let's go!")
+        exit()
+    else:
+        print("NO? Welp, you don't really have a choice...you leave for Diagon Alley.")
 
 
+def buy_supplies(character):
+    with open("inventory.json","r",encoding='utf-8') as f:
+        data= json.load(f)
+    print(data)
+    required_items={1:"Magic Wand",2:"Wizard Robe",3:"Potions Book"}
     
+    
+    
+    
+    
+    while character["Money"]!=0:
+        print("You have",character["Money"],"galleons.")
