@@ -116,7 +116,7 @@ def buy_supplies(character):
     
     
 #faut que tu termines et que tu geres le systeme de sauvegarde vu avec mathieu (cf chapter_2.py)
-#retablie toi bien 😊
+#retablie toi bien 😊 !
     
     
     while character["Money"]!=0:
