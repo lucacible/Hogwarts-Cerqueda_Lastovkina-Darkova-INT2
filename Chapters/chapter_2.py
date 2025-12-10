@@ -1,5 +1,5 @@
 #Chapter 2: The Journey to Hogwarts
-
+from utils.input_utils import ask_choice
 from universe.characters import *
 
 character = init_character()
@@ -11,7 +11,7 @@ def meet_friends(character):
     print("How do you respond?")
     print("1. Sure, have a seat!")
     print("2. Sorry, I prefer to travel alone.")
-    choice = input("Your choice: ")
+    choice = ask_choice("Your choice: ", ["1", "2"])
     if choice == "1":
         character["Attributes"]["Loyalty"] += 1
         print("Ron smiles: — Awesome! You'll see, Hogwarts is amazing!")
@@ -25,7 +25,7 @@ def meet_friends(character):
     print("How do you respond?")
     print("1. Yes, I love learning new things!")
     print("2. Uh… no, I prefer adventures over books.")
-    choice = input("Your choice: ")
+    choice = ask_choice("Your choice: ", ["1", "2"])
     if choice == "1" :
         character['Attributes']['Intelligence'] += 1
         print("Hermione smiles, impressed: — Oh, that's rare! You must be very clever!")
@@ -40,7 +40,7 @@ def meet_friends(character):
     print("1. Shake his hand politely.")
     print("2. Ignore him completely.")
     print("3. Respond with arrogance.")
-    choice = input("Your choice: ")
+    choice = ask_choice("Your choice: ", ["1", "2", "3"])
     if choice == "1":
         character["Attributes"]["Ambition"] += 1
         print("Draco smirks: —Good choice.")
