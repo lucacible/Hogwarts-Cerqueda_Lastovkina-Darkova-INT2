@@ -61,5 +61,6 @@ def welcome_message():
 
 def sorting_ceremony(character):
 
+
 #test
 meet_friends(character)
