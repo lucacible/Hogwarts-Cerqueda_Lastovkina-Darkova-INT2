@@ -60,7 +60,7 @@ def welcome_message():
     input("Professor Dumbledore: — Welcome back and welcome. Before we begin our banquet, I would like to say a few words. And here they are: Nitwit! Blubber! Oddment! Tweak! Thank you.")
 
 def sorting_ceremony(character):
-
+    print()
 
 #test
 meet_friends(character)
