@@ -115,7 +115,8 @@ def buy_supplies(character):
     required_items={1:"Magic Wand",2:"Wizard Robe",3:"Potions Book"}
     
     
-    
+#faut que tu termines et que tu geres le systeme de sauvegarde vu avec mathieu (cf chapter_2.py)
+#retablie toi bien 😊
     
     
     while character["Money"]!=0:
