@@ -174,16 +174,16 @@ def buy_supplies(character):
 
 def start_chapter_1():
     introduction()
-    create_character()
-    meet_hagrid(create_character)
-    buy_supplies(create_character)
+    character=create_character()
+    meet_hagrid()
+    character_1=buy_supplies(character)
     end_chapter_1_text="""
 Contrats, this is the end of Chapter 1, your adventure in Hogwarts is only
 starting, so don't too cocky jeje.
 """
     print(end_chapter_1_text)
     print("Your final character is:")
-    display_character(character)
+    display_character(character_1)
         
 
 
