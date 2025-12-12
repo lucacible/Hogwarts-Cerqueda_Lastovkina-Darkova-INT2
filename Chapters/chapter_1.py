@@ -1,8 +1,8 @@
 #Chapter 1 of the game
-from utils.input_utils import ask_choice, ask_number, ask_text
+from utils.input_utils import ask_choice, ask_number, ask_text,load_file
 from universe.characters import init_character, display_character,modify_money,add_item
 
-import json
+
 
 
 
@@ -90,7 +90,9 @@ def create_character():
     Attributes["Ambition"]=ask_number("Ambition level (1-10): ")
 
     character=init_character(last_name, first_name,Attributes)
+    print()
     display_character(character)
+    return character
 
 #introduction()
 #create_character()
@@ -109,15 +111,82 @@ Hagrid: Ohhhh, look how big he is haHaHah...
 
 
 def buy_supplies(character):
-    with open("inventory.json","r",encoding='utf-8') as f:
-        data= json.load(f)
-    print(data)
-    required_items={1:"Magic Wand",2:"Wizard Robe",3:"Potions Book"}
-    
+    data_diagon= load_file("data/inventory.json")
+    print("Datalog of available items:")
+    required_items=[]
+    for item_nb, cara in data_diagon.items():
+        print(f"{item_nb}. {cara[0]} - {cara[1]} Galleons ({cara[2]})")
+        if "required"==cara[2]:
+            required_items.append(item_nb)
     
 #faut que tu termines et que tu geres le systeme de sauvegarde vu avec mathieu (cf chapter_2.py)
 #retablie toi bien 😊 !
     
     
-    while character["Money"]!=0:
-        print("You have",character["Money"],"galleons.")
+    
+    while character["Money"]>0 and required_items!=[]:
+        
+        print(f"You have {character["Money"]} Galleons")
+        for item in required_items:
+            print("Remaining required items: ",item, end=",")
+        
+        item_choice=ask_number("Enter the number of the item to buy")
+        if data_diagon[item_choice][1]>character["Money"] and data_diagon[item_choice][2]=="required":
+            print("You don't know how to count do you... Luckily you're going to Hogwarts")
+            print("Game Over")
+            exit()
+        
+        if data_diagon[item_choice][2]=="required":
+            i=required_items.index[item_choice]
+            required_items.remove[i]
+        print(f"You bought : {data_diagon[item_choice][0]} (-{data_diagon[item_choice][1]} Galleons) .")
+        modify_money(character,data_diagon[item_choice][1])
+        add_item(character,"Inventory",data_diagon[item_choice])
+    
+    print("All required items have been purchased!")
+    print()
+    print("It's time to choose your Hogwarts pet!")
+    print()
+    print(f"You have {character["Money"]} Galleons")
+    print()
+    print("Available pets:")
+    
+    pets=["Owl","Cat","Rat","Toad"]
+    price_pet=[20,15,10,5]
+    for pet_indx in range(len(pets)-1):
+        print(f"{pet_indx+1}. {pets[pet_indx]} - {price_pet[pet_indx]} Galleons")
+    
+    pet_choice=ask_choice("Which pet do you want?",pets)
+    if price_pet[pet_choice]>character["Money"]:
+        print("You don't know how to count do you... Luckily you're going to Hogwarts")
+        print("Game Over")
+        exit()
+    
+    modify_money(character,price_pet[pet_indx])
+    add_item(character,"Inventory",pets[pet_choice])    
+    print(f"You chose: {pets[pet_choice]} (-{price_pet[pet_choice]})")
+
+    print("All required items have been successfully purchased!")
+    print("Here is your final inventory:")
+    print()
+    display_character(character)
+    return character  
+
+def start_chapter_1():
+    introduction()
+    create_character()
+    meet_hagrid(create_character)
+    buy_supplies(create_character)
+    end_chapter_1_text="""
+Contrats, this is the end of Chapter 1, your adventure in Hogwarts is only
+starting, so don't too cocky jeje.
+"""
+    print(end_chapter_1_text)
+    print("Your final character is:")
+    display_character(character)
+        
+
+
+
+
+
