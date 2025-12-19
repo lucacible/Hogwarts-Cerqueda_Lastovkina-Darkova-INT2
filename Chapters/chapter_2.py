@@ -1,7 +1,9 @@
 #Chapter 2: The Journey to Hogwarts
-
+import json
 from utils.input_utils import ask_choice, load_file
 from universe.house import *
+
+character = load_file("character.json")
 
 def meet_friends(character):
 #meeting with Ron
@@ -114,3 +116,13 @@ def enter_common_room(character):
     colors = ", ".join(house_data["colors"])
     print("Your house colors:", colors)
 
+def start_chapter_2(character):
+    meet_friends(character)
+    welcome_message()
+    sorting_ceremony(character)
+    enter_common_room(character)
+    print('Your final character is :', character)
+    text = """
+    Congratulations!! Your journey at Hogwarts is officially started 😉 and it means even MORE adventures. 
+But first, you have some classes to attend to ! Good luck and be attentive, you don't want to be kicked off out of Hogwarts the first year! """
+    print(text)
