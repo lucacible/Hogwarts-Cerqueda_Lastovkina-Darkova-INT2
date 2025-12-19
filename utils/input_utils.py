@@ -3,13 +3,13 @@ import json
 
 def ask_text(message):
     """
-    Funtion that checks if the input given by the user is correct
+    Function that checks if the input given by the user is correct
 
         Checks if it is not empty or whitespace
     Input: The user enters a string
 
 
-    Ouptut: returns the text entered by the user if it is correct,
+    Output: returns the text entered by the user if it is correct,
             else it asks it again
     
     """
@@ -26,7 +26,7 @@ def ask_number(message,min_val=None,max_val=None):
 This function takes a number entered by the user and verifies 
 its validity
 Input: the user enters a number
-Ouptut: Displays the number entered by the user
+Output: Displays the number entered by the user
 """
 
     nb_string=input(message)
@@ -39,7 +39,7 @@ Ouptut: Displays the number entered by the user
     elif nb_string[0]=="+":
         nb_string=nb_string[1:]
         
-#We transform the number from a string into a integer      
+#We transform the number from a string into an integer
     number=0
     for char in nb_string:
         if ord(char)<ord("0") or ord(char)>ord("9"):
@@ -74,7 +74,7 @@ def ask_choice(message,options)->int:
     """
 This function displays a number of options to the user and then asks for the user's choice, which it returns
 Input; the user enters the number of his choice
-Output: returns the user's choice so that it can later used in the main code
+Output: returns the user's choice so that it can later be used in the main code
 """
     print(message)
     for i in range (len(options)):
