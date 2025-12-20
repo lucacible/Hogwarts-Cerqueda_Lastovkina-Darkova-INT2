@@ -102,7 +102,7 @@ The Sorting Hat observes you for a long time before asking its questions:
         ),
         (
             "In what course are you the most interested?",
-            ["Transfiguration", "Potions", "Care of Magical Creatures", "Herbology"],
+            ["Defence Against the Dark Arts", "Potions", "Herbology", "Care of Magical Creatures"],
             ["Gryffindor", "Slytherin", "Hufflepuff", "Ravenclaw"]
         )
     ]
