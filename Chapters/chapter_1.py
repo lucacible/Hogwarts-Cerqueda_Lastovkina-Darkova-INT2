@@ -176,16 +176,15 @@ def buy_supplies(character):
 def start_chapter_1():
     introduction()
     character = create_character()
-    """
-    A CHANGER !
-    if not os.path.isfile("src/chapters/sauvegardes/sauvegarde_donnees_personnage.json"):
-            last_name = character["Last name"]
-            first_name = character["First name"]
-            mes_attribues = character["Attributes"]
-            money = character["Money"]
-            inventory = character["Inventory"]
-            spells = character["Spells"]
-"""
+
+    if not os.path.isfile("src/chapters/backup/data_backup_character.json"):
+        last_name = character["Last Name"]
+        first_name = character["First Name"]
+        Attributes = character["Attributes"]
+        Money = character["Money"]
+        Inventory = character["Inventory"]
+        Spells = character["Spells"]
+
     meet_hagrid(character)
     buy_supplies(character)
     end_chapter_1_text = """

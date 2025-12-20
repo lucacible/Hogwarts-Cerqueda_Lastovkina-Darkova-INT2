@@ -1,7 +1,8 @@
 #Chapter 2: The Journey to Hogwarts
-import json
+
 from utils.input_utils import ask_choice, load_file
 from universe.house import *
+import json
 
 character = load_file("character.json")
 
@@ -107,13 +108,13 @@ The Sorting Hat observes you for a long time before asking its questions:
     ]
     assign_house(character, questions)
 
-import json
 def enter_common_room(character):
+    house = sorting_ceremony(character)
     house_data = load_file('data/houses.json')
     print("You follow the prefects through the castle corridors...")
-    print(house_data['emoji'], " ", house_data["description"])
-    print(house_data["installation_message"])
-    colors = ", ".join(house_data["colors"])
+    print(house_data[house]['emoji'], " ", house_data[house]["description"])
+    print(house_data[house]["installation_message"])
+    colors = ", ".join(house_data[house]["colors"])
     print("Your house colors:", colors)
 
 def start_chapter_2(character):
