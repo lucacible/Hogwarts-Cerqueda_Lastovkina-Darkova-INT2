@@ -1,0 +1,152 @@
+Index: universe/characters.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#Python for characters
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/universe/characters.py b/universe/characters.py
+--- a/universe/characters.py	(revision 0d8dc13c28908356a3d7f20891bdbc708cc02bfe)
++++ b/universe/characters.py	(date 1764924183090)
+@@ -1,1 +1,28 @@
+-#Python for characters
+\ No newline at end of file
++#Python for characters
++def init_character(last_name, first_name, attributes):
++    character = {
++    "Personal information": {
++        "First Name": first_name,
++        "Last Name": last_name },
++    "Money": 100, #in galleons
++    "Inventory": ['a','b'],
++    "Spells": [],
++    "Attributes": attributes
++    }
++    return character
++
++def dislay_character(character):
++    for key in character.keys():
++        value = character[key]
++        for subkey,subvalue in value.items():
++            print("{}: {}".format(subkey,subvalue))
++        for element in value:
++            text = ", ".join(value)
++            print(text)
++        print(value)
++
++
++#test
++atts = {"power": 150, "speed": 100}
++player = init_character("Darkova", "Dina", atts)
++dislay_character(player)
+\ No newline at end of file
+Index: .idea/pychatbot-Cerqueda_Lastovkina-Darkova-INT2.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/pychatbot-Cerqueda_Lastovkina-Darkova-INT2.iml b/.idea/pychatbot-Cerqueda_Lastovkina-Darkova-INT2.iml
+new file mode 100644
+--- /dev/null	(date 1764174149811)
++++ b/.idea/pychatbot-Cerqueda_Lastovkina-Darkova-INT2.iml	(date 1764174149811)
+@@ -0,0 +1,10 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="PYTHON_MODULE" version="4">
++  <component name="NewModuleRootManager">
++    <content url="file://$MODULE_DIR$">
++      <excludeFolder url="file://$MODULE_DIR$/.venv" />
++    </content>
++    <orderEntry type="jdk" jdkName="Python 3.14 (pychatbot-Cerqueda_Lastovkina-Darkova-INT2)" jdkType="Python SDK" />
++    <orderEntry type="sourceFolder" forTests="false" />
++  </component>
++</module>
+\ No newline at end of file
+Index: .idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+new file mode 100644
+--- /dev/null	(date 1764165968173)
++++ b/.idea/.gitignore	(date 1764165968173)
+@@ -0,0 +1,8 @@
++# Default ignored files
++/shelf/
++/workspace.xml
++# Editor-based HTTP Client requests
++/httpRequests/
++# Datasource local storage ignored files
++/dataSources/
++/dataSources.local.xml
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+new file mode 100644
+--- /dev/null	(date 1764167049149)
++++ b/.idea/modules.xml	(date 1764167049149)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectModuleManager">
++    <modules>
++      <module fileurl="file://$PROJECT_DIR$/.idea/pychatbot-Cerqueda_Lastovkina-Darkova-INT2.iml" filepath="$PROJECT_DIR$/.idea/pychatbot-Cerqueda_Lastovkina-Darkova-INT2.iml" />
++    </modules>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+new file mode 100644
+--- /dev/null	(date 1764317670078)
++++ b/.idea/misc.xml	(date 1764317670078)
+@@ -0,0 +1,7 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="Black">
++    <option name="sdkName" value="Python 3.14 (pychatbot-Cerqueda_Lastovkina-Darkova-INT2)" />
++  </component>
++  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.14 (pychatbot-Cerqueda_Lastovkina-Darkova-INT2)" project-jdk-type="Python SDK" />
++</project>
+\ No newline at end of file
+Index: .idea/inspectionProfiles/profiles_settings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/inspectionProfiles/profiles_settings.xml b/.idea/inspectionProfiles/profiles_settings.xml
+new file mode 100644
+--- /dev/null	(date 1764166307393)
++++ b/.idea/inspectionProfiles/profiles_settings.xml	(date 1764166307393)
+@@ -0,0 +1,6 @@
++<component name="InspectionProjectProfileManager">
++  <settings>
++    <option name="USE_PROJECT_PROFILE" value="false" />
++    <version value="1.0" />
++  </settings>
++</component>
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	(date 1764166307385)
++++ b/.idea/vcs.xml	(date 1764166307385)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file

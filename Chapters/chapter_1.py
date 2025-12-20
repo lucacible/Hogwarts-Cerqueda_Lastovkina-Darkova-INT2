@@ -27,7 +27,7 @@ marked with a clear red signet.
 """
     # This part here gives the first text
     print(intro_text)
-    input("TYPE ANYTHING TO CONTINUE")
+    input()
 
     intro_text2 = """
 You brute force your way to the letter in it...or so you thought!!
@@ -49,7 +49,7 @@ circle, befitting your magical attributes.
 """
     # This part the second text
     print(intro_text2)
-    input("TYPE ANYTHING TO CONTINUE")
+    input()
 
     choice = ask_choice("So what will you do?",
                         ["I will enter the HOGWARTS magic academy",
@@ -109,7 +109,7 @@ Hagrid: Ohhhh, look how big he is haHaHah...
 
 def buy_supplies(character):
     data_diagon = load_file("data/inventory.json")
-    print("Datalog of available items:")
+    print("Catalog of available items:")
     required_items = []
     for item_nb, cara in data_diagon.items():
         print(f"{item_nb}. {cara[0]} - {cara[1]} Galleons ({cara[2]})")
@@ -177,7 +177,7 @@ def start_chapter_1():
     introduction()
     character = create_character()
 
-    if not os.path.isfile("src/chapters/backup/data_backup_character.json"):
+    if not os.path.isfile("src/Chapters/Backup/data_backup_character.json"):
         last_name = character["Last Name"]
         first_name = character["First Name"]
         Attributes = character["Attributes"]
