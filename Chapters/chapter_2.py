@@ -4,8 +4,6 @@ from utils.input_utils import ask_choice, load_file
 from universe.house import *
 import json
 
-character = load_file("character.json")
-
 def meet_friends(character):
 #meeting with Ron
     text = """
@@ -13,12 +11,10 @@ def meet_friends(character):
 A red-haired boy enters your compartment, looking friendly.
 — Hi! I'm Ron Weasley. Mind if I sit with you?
 How do you respond?
-1. Sure, have a seat!
-2. Sorry, I prefer to travel alone.
 """
     print(text)
-    choice = ask_choice("Your choice: ", ["1", "2"])
-    if choice == "1":
+    choice = ask_choice("Your choice: ", ["Sure, have a seat!", "Sorry, I prefer to travel alone."])
+    if choice == 1:
         character["Attributes"]["Loyalty"] += 1
         print("Ron smiles: — Awesome! You'll see, Hogwarts is amazing!")
     else:
@@ -30,12 +26,10 @@ How do you respond?
     A girl enters next, already carrying a stack of books.
 — Hello, I'm Hermione Granger. Have you ever read 'A History of Magic'?
 How do you respond?
-1. Yes, I love learning new things!
-2. Uh… no, I prefer adventures over books.
 """
     print(text)
-    choice = ask_choice("Your choice: ", ["1", "2"])
-    if choice == "1" :
+    choice = ask_choice("Your choice: ", ["Yes, I love learning new things!", "Uh… no, I prefer adventures over books."])
+    if choice == 1 :
         character['Attributes']['Intelligence'] += 1
         print("Hermione smiles, impressed: — Oh, that's rare! You must be very clever!")
     else:
@@ -47,16 +41,13 @@ How do you respond?
     Then a blonde boy enters, looking arrogant.
 — I'm Draco Malfoy. It's best to choose your friends carefully from the start, don't you think?
 How do you respond?
-1. Shake his hand politely.
-2. Ignore him completely.
-3. Respond with arrogance.
 """
     print(text)
-    choice = ask_choice("Your choice: ", ["1", "2", "3"])
-    if choice == "1":
+    choice = ask_choice("Your choice: ", ["Shake his hand politely.", "Ignore him completely.", "Respond with arrogance."])
+    if choice == 1:
         character["Attributes"]["Ambition"] += 1
         print("Draco smirks: —Good choice.")
-    elif choice == "2":
+    elif choice == 2:
         character["Attributes"]["Loyalty"] += 1
         print("Draco frowns, annoyed. — You'll regret that!")
     else:
@@ -106,15 +97,20 @@ The Sorting Hat observes you for a long time before asking its questions:
             ["Gryffindor", "Slytherin", "Hufflepuff", "Ravenclaw"]
         )
     ]
-    assign_house(character, questions)
+    house = assign_house(character, questions)
+    character["House"] = house
+    print()
+    print("The Sorting Hat exclaims:", house,"!!!")
+
 
 def enter_common_room(character):
-    house = sorting_ceremony(character)
+    house = character["House"]
     house_data = load_file('data/houses.json')
+    info = house[house_data]
     print("You follow the prefects through the castle corridors...")
-    print(house_data[house]['emoji'], " ", house_data[house]["description"])
-    print(house_data[house]["installation_message"])
-    colors = ", ".join(house_data[house]["colors"])
+    print(info['emoji'], " ", info["description"])
+    print(info["installation_message"])
+    colors = ", ".join(info["colors"])
     print("Your house colors:", colors)
 
 def start_chapter_2(character):
@@ -127,3 +123,4 @@ def start_chapter_2(character):
     Congratulations!! Your journey at Hogwarts is officially started 😉 and it means even MORE adventures. 
 But first, you have some classes to attend to ! Good luck and be attentive, you don't want to be kicked off out of Hogwarts the first year! """
     print(text)
+    return character

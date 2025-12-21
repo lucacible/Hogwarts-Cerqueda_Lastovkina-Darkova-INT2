@@ -92,25 +92,3 @@ Output: the house your're more attuned with
         update_house_points(house_score,choice,3)
     return display_winning_house(house_score)
 
-"""
-character=init_character("Luca","Cerqueda",{"Courage":5,"Ambition":8,"Loyalty":6,"Intellinge":10})
-assign_house(character, [ 
-( 
-"You see a friend in danger. What do you do?", 
-["Rush to help", "Think of a plan", "Seek help", "Stay calm and obserbe"],
- 
-["Gryffindor", "Slytherin", "Hufflepuff", "Ravenclaw"] 
-), 
-( 
-"Which trait describes you best?", 
-["Brave and loyal", "Cunning and ambitious", "Patient and hardworking", "Intelligent and curious"], 
-["Gryffindor", "Slytherin", "Hufflepuff", "Ravenclaw"] 
-), 
-( 
-"When faced with a difficult challenge, you...", 
-["Charge in without hesitation", "Look for the best strategy", "Rely on your friends", 
-"Analyze the problem"], 
-["Gryffindor", "Slytherin", "Hufflepuff", "Ravenclaw"] 
-) 
-])
-"""

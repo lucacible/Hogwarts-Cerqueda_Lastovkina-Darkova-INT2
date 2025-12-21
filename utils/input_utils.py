@@ -89,15 +89,12 @@ def load_file(file_path):
     """
 with this function we can extract the json data in .json files
  """   
-    
+
     with open (file_path, "r",encoding='utf-8')as f:
         content=json.load(f)
         return content
     
 #print(load_file("data/houses.json"))
-
-
-
 
 
 

@@ -1,7 +1,6 @@
 # Chapter 1 of the game
 from utils.input_utils import ask_choice, ask_number, ask_text, load_file
 from universe.characters import init_character, display_character, modify_money, add_item
-import os
 import json
 
 
@@ -35,7 +34,7 @@ Suddenly the envelope disappears from your hands and starts floating in the air.
 
 A MOUTH?? opens:
 
-"Dear student, we're happy to annouce that you've been accepted to the
+"Dear student, we're happy to announce that you've been accepted to the
 most prestigious HOGWARTS magic academy."
 
 "Not befitting of you...moggle" whispers the letter??
@@ -87,22 +86,24 @@ def create_character():
 
     character = init_character(last_name, first_name, Attributes)
     print()
+    print("This is your character information for the moment: ")
     display_character(character)
+    print()
     return character
 
-
-# introduction()
-# create_character()
 
 def meet_hagrid(character):
     hagrid_text = """
 Hagrid: Ohhhh, look how big he is haHaHah...
         I'll help you make your shopping in Diagon Alley.
 """
+    print(hagrid_text)
     choice = ask_choice("Do you want to follow Hagrid?", ["Yes", "No"])
     if choice == 1:
+        print()
         print("All right let's go!")
     else:
+        print()
         print("NO? Welp, you don't really have a choice...you leave for Diagon Alley.")
         exit()
 
@@ -110,17 +111,13 @@ Hagrid: Ohhhh, look how big he is haHaHah...
 def buy_supplies(character):
     data_diagon = load_file("data/inventory.json")
     print("Catalog of available items:")
-    required_items = []
-    for item_nb, cara in data_diagon.items():
-        print(f"{item_nb}. {cara[0]} - {cara[1]} Galleons ({cara[2]})")
-        if "required" == cara[2]:
-            required_items.append(item_nb)
-
-    # faut que tu termines et que tu geres le systeme de sauvegarde vu avec mathieu (cf chapter_2.py)
-    # retablie toi bien 😊 !
+    required_items = ["Magic Wand", "Wizard Robe", "Potions Book"]
+    for item_nb, value in data_diagon.items():
+        label = "required" if value[0] in required_items else ""
+        print("{}. {} - {} Galleons {}".format(item_nb, value[0], value[1], label))
 
     while character["Money"] > 0 and required_items != []:
-
+        print()
         print(f"You have {character['Money']} Galleons")
         print("Remaining required items:", end=" ")
         for item in required_items:
@@ -129,15 +126,13 @@ def buy_supplies(character):
             else:
                 print(item)
 
-        item_choice = str(ask_number("Enter the number of the item to buy :"))
-        if data_diagon[item_choice][1] > character["Money"] and data_diagon[item_choice][2] == "required":
+        item_choice = ask_text("Enter the number of the item to buy :")
+        if data_diagon[item_choice][1] > character["Money"] and data_diagon[item_choice][0] in required_items:
             print("You don't know how to count do you... Luckily you're going to Hogwarts")
             print("Game Over")
-            exit()
+        elif data_diagon[item_choice][0] in required_items:
+            required_items.remove(data_diagon[item_choice][0])
 
-        if data_diagon[item_choice][2] == "required":
-            # i= required_items.index[item_choice] #type: ignore
-            required_items.remove(item_choice)  # type: ignore
         print(f"You bought : {data_diagon[item_choice][0]} (-{data_diagon[item_choice][1]} Galleons) .")
         modify_money(character, -data_diagon[item_choice][1])
         add_item(character, "Inventory", data_diagon[item_choice][0])
@@ -152,7 +147,7 @@ def buy_supplies(character):
 
     pets = ["Owl", "Cat", "Rat", "Toad"]
     price_pet = [20, 15, 10, 5]
-    for pet_indx in range(len(pets) - 1):
+    for pet_indx in range(len(pets)) :
         print(f"{pet_indx + 1}. {pets[pet_indx]} - {price_pet[pet_indx]} Galleons")
 
     pet_choice = ask_choice("Which pet do you want?", pets)
@@ -167,24 +162,17 @@ def buy_supplies(character):
 
     print("All required items have been successfully purchased!")
     print("Here is your final inventory:")
-    print(character["Inventory"])
+    print("")
+    inventory = ", ".join(character["Inventory"])
+    print(inventory)
+    print("Your Character Profile:")
     display_character(character)
-    print(character)
     return character
 
 
 def start_chapter_1():
     introduction()
     character = create_character()
-
-    if not os.path.isfile("src/Chapters/Backup/data_backup_character.json"):
-        last_name = character["Last Name"]
-        first_name = character["First Name"]
-        Attributes = character["Attributes"]
-        Money = character["Money"]
-        Inventory = character["Inventory"]
-        Spells = character["Spells"]
-
     meet_hagrid(character)
     buy_supplies(character)
     end_chapter_1_text = """
@@ -194,7 +182,4 @@ starting, so don't too cocky jeje.
     print(end_chapter_1_text)
     print("Your final character is:")
     display_character(character)
-
-
-if __name__ == "__main__":
-    start_chapter_1()
+    return character
