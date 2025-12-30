@@ -4,6 +4,8 @@ from universe.house import houses
 from Chapters.chapter_1 import start_chapter_1
 from Chapters.chapter_2 import start_chapter_2
 from Chapters.chapter_3 import start_chapter_3
+from Chapters.chapter_4 import start_chapter_4_quidditch
+#from Chapters.chapter_5 import start_chapter_5_extensions
 
 def display_main_menu():
     main_game_menu = """
@@ -18,7 +20,8 @@ def launch_menu_choice():
         character = start_chapter_1()
         start_chapter_2(character)
         start_chapter_3(character, houses)
-        #start_chapter_4_quidditch(character, houses)
+        start_chapter_4_quidditch(character, houses)
+        #start_chapter_5_extensions
     elif choice == 2:
         print("Thank you for your attention! Hogwarts hopes to see you among its students in the future!")
         exit()
