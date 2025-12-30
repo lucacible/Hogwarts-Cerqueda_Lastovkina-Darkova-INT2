@@ -104,6 +104,8 @@ def quidditch_match(character, houses):
 
     update_house_points(houses,player_team['name'],player_team['score'])
     update_house_points(houses,opposing_team['name'],opposing_team['score'])
+    print("Final Results:")
+    display_score(player_team, opposing_team)
 
 
 def start_chapter_4_quidditch(character, houses):
@@ -120,11 +122,9 @@ Get ready to take off, YOU WERE CHOSEN AS A SEEKER!
 The game you showed was impressive! We are proud to have you in our team.
 ⭐ Congratulations on completing Chapter 4: The Quidditch Match! ⭐
 
-Soooo, after all that time... we are abour to announce the winner of the House Cap!
+Soooo, after all that time... we are about to announce the winner of the House Cap!
     """
     print(text2)
-    print("Final Results:")
-    display_score(player_team, opposing_team)
     print("And the winning house is...")
     display_winning_house(houses)
     print("Also, here is your updated information:")

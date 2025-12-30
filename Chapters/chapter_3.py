@@ -25,18 +25,22 @@ def learn_spells(character, file_path="data/spells.json"):
     print(f"You have just learned the spell:{offensive} (Offensive)")
     add_item(character,character["Spells"],offensive)
     input("Press Enter to continue...")
-    
+    print()
+
     defensive=random.choice(defensive_spells)
     print(f"You have just learned the spell:{defensive} (Defensive)")
     add_item(character,character["Spells"],defensive)
     input("Press Enter to continue...")
-    
-    for nb in range(0,3):
+    print()
+
+    for i in range(3):
         utility=random.choice(utility_spells)
         print(f"You have just learned the spell:{utility} (Utility)")
+        print()
         utility_spells.remove(utility)
         add_item(character,character["Spells"],utility)
         input("Press Enter to continue...")
+        print()
 
     
     text="""
@@ -58,7 +62,7 @@ def magic_quiz(character,file_path="data/magic_quiz.json"):
     print("Answer the 4 questions correctly to earn points for your house.")
     
     score=0
-    for nb in range(0,4):
+    for nb in range(4):
         question=random.choice(data_questions)
         data_questions.remove(question)
         
@@ -82,6 +86,4 @@ def start_chapter_3(character, houses):
     update_house_points(houses,character["House"],score)
     display_winning_house(houses)
     display_character(character)
-
-
-    
+    return character, houses

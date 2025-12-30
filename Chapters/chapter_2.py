@@ -59,10 +59,12 @@ Your choices already say a lot about your personality!
 """
     print(text)
     print("Your updated attributes: ", character["Attributes"])
+    print()
 
 
 def welcome_message():
     input("Professor Dumbledore: — Welcome back and welcome. Before we begin our banquet, I would like to say a few words. And here they are: Nitwit! Blubber! Oddment! Tweak! Thank you.")
+    print()
 
 def sorting_ceremony(character):
     text = """
@@ -97,16 +99,15 @@ The Sorting Hat observes you for a long time before asking its questions:
             ["Gryffindor", "Slytherin", "Hufflepuff", "Ravenclaw"]
         )
     ]
-    house = assign_house(character, questions)
-    character["House"] = house
+    character["House"] = assign_house(character, questions)
     print()
-    print("The Sorting Hat exclaims:", house,"!!!")
+    print("The Sorting Hat exclaims:", character["House"], "!!!")
 
 
 def enter_common_room(character):
     house = character["House"]
     house_data = load_file('data/houses.json')
-    info = house[house_data]
+    info = house_data[house]
     print("You follow the prefects through the castle corridors...")
     print(info['emoji'], " ", info["description"])
     print(info["installation_message"])
