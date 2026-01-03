@@ -84,12 +84,20 @@ def quidditch_match(character, houses):
     while rounds < 20:
         rounds += 1
         print("\n---- Round {} ----".format(rounds))
-        attempt_goal(player_team, opposing_team, player_is_seeker=True)
-        display_score(player_team, opposing_team)
-        if golden_snitch_appears():
+        counter_player_team = 0
+        counter_opposing_team = 0
+        if counter_player_team < counter_opposing_team or counter_player_team == counter_opposing_team:
+            attempt_goal(player_team, opposing_team, player_is_seeker=True)
+            display_score(player_team, opposing_team)
+        else:
+            attempt_goal(opposing_team, player_team, player_is_seeker=False)
+            display_score(opposing_team, player_team)
+        golden_snitch = golden_snitch_appears()
+        if golden_snitch == True:
             print("The Golden Snitch has appeared!")
             catching_team = catch_golden_snitch(player_team, opposing_team)
             print("{} catches the Golden Snitch! (+150 points)".format(catching_team['name']))
+            catching_team['score'] += 150
             display_score(player_team, opposing_team)
             print("The match is over! {} wins!".format(catching_team['name']))
             break
