@@ -94,9 +94,10 @@ The Sorting Hat observes you for a long time before asking its questions:
             ["Gryffindor", "Slytherin", "Hufflepuff", "Ravenclaw"]
         )
     ]
-    character["House"] = assign_house(character, questions)
+    house = assign_house(character, questions)
+    character['House'] = house
     print()
-    print("The Sorting Hat exclaims:", character["House"], "!!!")
+    print("The Sorting Hat exclaims:", house, "!!!")
 
 
 def enter_common_room(character):

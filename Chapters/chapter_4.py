@@ -136,5 +136,5 @@ Soooo, after all that time... we are about to announce the winner of the House C
     print(text2)
     print("And the winning house is...")
     display_winning_house(houses)
-    print("Also, here is your updated information:")
+    print("Also, here is your final information:")
     display_character(character)

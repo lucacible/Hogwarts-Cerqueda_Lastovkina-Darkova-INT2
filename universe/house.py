@@ -24,12 +24,10 @@ def update_house_points(houses,house_name,points):
    
 
 
-def display_winning_house(dico):   
-    
-    score=dico["Gryffindor"]
+def display_winning_house(houses):
     winning_house=[]
     
-    for subkey,subvalue in dico.items():
+    for subkey,subvalue in houses.items():
         if subvalue>score:
             winning_house = [subkey]
             score=subvalue
