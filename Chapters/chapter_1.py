@@ -1,4 +1,4 @@
-# Chapter 1 of the game
+
 from utils.input_utils import ask_choice, ask_number, ask_text, load_file
 from universe.characters import init_character, display_character, modify_money, add_item
 import json
@@ -24,7 +24,7 @@ marked with a clear red signet.
 "Is it what I've been waiting for?"
 
 """
-    # This part here gives the first text
+
     print(intro_text)
     input()
 
@@ -46,7 +46,7 @@ circle, befitting your magical attributes.
 
 "You still have a choice though...though I'd recommend not skipping this opportunity"
 """
-    # This part the second text
+   
     print(intro_text2)
     input()
 
@@ -65,7 +65,7 @@ Now that's done, shouldn't you introduce yourself to this lovely letter???
         print(intro_text3)
 
 
-# Down here is the function making you create your own character
+
 
 def create_character():
     last_name = ask_text("Enter your character's last name: ")
