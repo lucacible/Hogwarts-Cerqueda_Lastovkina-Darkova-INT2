@@ -84,11 +84,20 @@ Output: the house your're more attuned with
                 house_score["Hufflepuff"]=house_score["Hufflepuff"]+2*value
             case "Intelligence":
                 house_score["Ravenclaw"]=house_score["Ravenclaw"]+2*value
-    
-    
-    for q in range(len(questions)):
-        choice_nb=ask_choice(questions[q][0],questions[q][1])
-        choice=questions[q][2][choice_nb-1]
-        update_house_points(house_score,choice,3)
-    return display_winning_house(house_score)
+
+    i = 0
+    for question, options, house in questions:
+        choice_nb = ask_choice(question, options)
+        while i < len(options):
+            if options[i] == choice_nb:
+                final_house = house[i]
+                house_score[final_house] += 3
+            i += 1
+        print('Final house scores:', house_score)
+        highest_score = None
+        winning_house = None
+        if highest_score == None or house_score[final_house] > highest_score:
+            highest_score = house_score[final_house]
+            winning_house = final_house
+        return winning_house
 
