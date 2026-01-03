@@ -1,10 +1,9 @@
-#Python for character creation and management
-#Python for characters
+
 def init_character(last_name, first_name, attributes):
     character = {
         "First Name": first_name,
         "Last Name": last_name ,
-    "Money": 100, #in galleons
+    "Money": 100, 
     "Inventory": [],
     "Spells": [],
     "Attributes": attributes

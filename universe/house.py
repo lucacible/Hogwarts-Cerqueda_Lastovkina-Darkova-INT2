@@ -1,4 +1,4 @@
-#Python for choice and management of the house  
+
 from universe.characters import *
 from utils.input_utils import ask_choice
 
@@ -12,12 +12,7 @@ houses = {
 
 
 def update_house_points(houses,house_name,points):
-    """
-This function takes as input the scores of the houses and updates them
-according to a number given.Then displays the new score and uptdates the
-the dictionary containing all house scores.
-"""
-    #all of this is for displaying in a readable way
+
     for key in houses.keys():
         if key == house_name:
            print("Changes to ",house_name,":",houses[house_name],"+", points)
@@ -26,28 +21,21 @@ the dictionary containing all house scores.
            return houses[house_name]
     else:
         return "This house does not exist"
-    
-#print(update_house_points(houses,"Gryffindor",-6))
+   
 
 
-def display_winning_house(dico):
-    """
-This function takes the houses dictionary and displays the winning houses
-relative to their current scores
-Input: houses
-Output:List winning_house
-"""   
+def display_winning_house(dico):   
     
     score=dico["Gryffindor"]
     winning_house=[]
-    #we look for the highest scores and add them in the list
+    
     for subkey,subvalue in dico.items():
         if subvalue>score:
             winning_house = [subkey]
             score=subvalue
         elif subvalue==score:
             winning_house.append(subkey)
-    #we look if there is one or more winning houses
+    
     if len(winning_house)>1:
         print("The winning houses are :")
     else:
@@ -58,15 +46,10 @@ Output:List winning_house
         else:
             print(house,end=".")
 
-#print(displya_winning_house(houses))
+
 
 def assign_house(character, questions):
-    """
-This function takes as input your character dictionary and questions needed to determine your house and displays the house
-more attuned with
-Input: characters and tuples questions
-Output: the house your're more attuned with
-"""
+ 
     house_score={
         "Gryffindor":0,
     "Slytherin":0,
