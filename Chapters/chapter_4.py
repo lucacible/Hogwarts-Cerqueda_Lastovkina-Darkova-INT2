@@ -80,7 +80,7 @@ def quidditch_match(character, houses):
     display_team(opposing_house, opposing_team)
     print("You are playing for {} as a Seeker.".format(player_team['name']))
     rounds = 0
-    while rounds < 20:
+    while rounds <= 20:
         rounds += 1
         print("\n---- Round {} ----".format(rounds))
         counter_player_team = 0
