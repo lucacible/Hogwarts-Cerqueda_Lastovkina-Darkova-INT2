@@ -55,7 +55,7 @@ def assign_house(character, questions):
     "Ravenclaw":0
     }
 
-    info = character["Attributs"]
+    info = character["Attributes"]
     house_score["Gryffindor"]= info["Gryffindor"]+value*2
     house_score["Slytherin"]=info["Slytherin"]+2*value
     house_score["Hufflepuff"]=info["Hufflepuff"]+2*value
