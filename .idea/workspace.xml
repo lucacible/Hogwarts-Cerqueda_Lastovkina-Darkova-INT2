@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7878a4f5-89d5-4869-bf0c-44778d35e72a" name="Changes" comment="Chapter 4 DONE">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_12_2025_22_56_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_12_2025_22_56__Changes_.xml" beforeDir="false" />
+    <list default="true" id="7878a4f5-89d5-4869-bf0c-44778d35e72a" name="Changes" comment="Menu changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chapters/chapter_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Chapters/chapter_2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chapters/chapter_3.py" beforeDir="false" afterPath="$PROJECT_DIR$/Chapters/chapter_3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chapters/chapter_4.py" beforeDir="false" afterPath="$PROJECT_DIR$/Chapters/chapter_4.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/menu.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +142,8 @@
       <workItem from="1766240473646" duration="5992000" />
       <workItem from="1766250595353" duration="944000" />
       <workItem from="1766338785998" duration="14383000" />
-      <workItem from="1767053613698" duration="326000" />
+      <workItem from="1767053613698" duration="422000" />
+      <workItem from="1767467898761" duration="447000" />
     </task>
     <task id="LOCAL-00001" summary="coucou">
       <option name="closed" value="true" />
@@ -326,7 +321,31 @@
       <option name="project" value="LOCAL" />
       <updated>1767053655921</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Chapter 4 corrections">
+      <option name="closed" value="true" />
+      <created>1767053958052</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1767053958052</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Menu changes">
+      <option name="closed" value="true" />
+      <created>1767054022843</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1767054022843</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Menu changes">
+      <option name="closed" value="true" />
+      <created>1767054032876</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1767054032876</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -350,7 +369,9 @@
     <MESSAGE value="Corrected some errors in Chapter 1" />
     <MESSAGE value="Corrected errors and executed" />
     <MESSAGE value="Chapter 4 DONE" />
-    <option name="LAST_COMMIT_MESSAGE" value="Chapter 4 DONE" />
+    <MESSAGE value="Chapter 4 corrections" />
+    <MESSAGE value="Menu changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Menu changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
