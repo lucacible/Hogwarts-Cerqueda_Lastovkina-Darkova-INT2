@@ -1,4 +1,3 @@
-import json
 import random
 from utils.input_utils import load_file
 from universe.house import update_house_points, display_winning_house
