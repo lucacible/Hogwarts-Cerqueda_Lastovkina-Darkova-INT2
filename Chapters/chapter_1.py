@@ -1,4 +1,3 @@
-# Chapter 1 of the game
 from utils.input_utils import ask_choice, ask_number, ask_text, load_file
 from universe.characters import init_character, display_character, modify_money, add_item
 import json
@@ -63,9 +62,6 @@ Now that's done, shouldn't you introduce yourself to this lovely letter???
         exit()
     else:
         print(intro_text3)
-
-
-# Down here is the function making you create your own character
 
 def create_character():
     last_name = ask_text("Enter your character's last name: ")

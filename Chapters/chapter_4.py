@@ -1,4 +1,3 @@
-#Chapter 4 of the game
 import json
 import random
 from utils.input_utils import load_file

@@ -73,17 +73,12 @@ Output: the house your're more attuned with
     "Hufflepuff":0,
     "Ravenclaw":0
     }
-    
-    for attri,value in character["Attributes"].items():
-        match attri:
-            case "Courage":
-                house_score["Gryffindor"]=  house_score["Gryffindor"]+value*2
-            case "Ambition":
-                house_score["Slytherin"]=house_score["Slytherin"]+2*value
-            case "Loyalty":
-                house_score["Hufflepuff"]=house_score["Hufflepuff"]+2*value
-            case "Intelligence":
-                house_score["Ravenclaw"]=house_score["Ravenclaw"]+2*value
+
+    info = character["Attributs"]
+    house_score["Gryffindor"]=  house_score["Gryffindor"]+value*2
+    house_score["Slytherin"]=house_score["Slytherin"]+2*value
+    house_score["Hufflepuff"]=house_score["Hufflepuff"]+2*value
+    house_score["Ravenclaw"]=house_score["Ravenclaw"]+2*value
 
     i = 0
     for question, options, house in questions:

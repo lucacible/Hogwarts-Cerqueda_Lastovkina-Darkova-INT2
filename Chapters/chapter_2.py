@@ -1,11 +1,8 @@
-#Chapter 2: The Journey to Hogwarts
-
 from utils.input_utils import ask_choice, load_file
 from universe.house import *
 import json
 
 def meet_friends(character):
-#meeting with Ron
     text = """
     You board the Hogwarts Express. The train slowly departs northward...
 A red-haired boy enters your compartment, looking friendly.
@@ -21,7 +18,6 @@ How do you respond?
         character["Attributes"]["Ambition"] += 1
         print("Ron seems a bit sad: — It's okay, I won't disturb you more.")
 
-#meeting with Hermione
     text = """
     A girl enters next, already carrying a stack of books.
 — Hello, I'm Hermione Granger. Have you ever read 'A History of Magic'?
@@ -36,7 +32,6 @@ How do you respond?
         character['Attributes']['Courage'] += 1
         print("Hermione seems confused: — I see... I hope you'll have enough adventures then.")
 
-#meeting with Draco:
     text = """
     Then a blonde boy enters, looking arrogant.
 — I'm Draco Malfoy. It's best to choose your friends carefully from the start, don't you think?
