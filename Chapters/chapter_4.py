@@ -72,10 +72,14 @@ def display_team(house, team):
 
 def quidditch_match(character, houses):
     teams_quidditch = load_file('data/teams_quidditch.json')
-    player_team = create_teams(character['House'], teams_quidditch[character['House']]['players'], is_player=True, player=character)
-    opposing_team = create_teams(random.choice(houses))    
-    display_team(player_team['name'], player_team)
-    display_team(opposing_team['name'], opposing_team)
+    player_house = character['House']
+    opposing_house = random.choice(houses)
+    while player_house == opposing_house:
+        opposing_house = random.choice(houses)
+    player_team = create_teams(player_house, teams_quidditch[player_house]['players'], is_player=True, player=character)
+    opposing_team = create_teams(opposing_house, teams_quidditch[opposing_house]['players'])
+    display_team(player_house, player_team)
+    display_team(opposing_house, opposing_team)
     print("You are playing for {} as a Seeker.".format(player_team['name']))
     rounds = 0
     while rounds < 20:
