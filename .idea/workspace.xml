@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7878a4f5-89d5-4869-bf0c-44778d35e72a" name="Changes" comment="Last changes">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chapters/chapter_4.py" beforeDir="false" afterPath="$PROJECT_DIR$/Chapters/chapter_4.py" afterDir="false" />
-    </list>
+    <list default="true" id="7878a4f5-89d5-4869-bf0c-44778d35e72a" name="Changes" comment="Last changes" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,6 +18,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -147,7 +145,7 @@
       <workItem from="1767467898761" duration="782000" />
       <workItem from="1767471835300" duration="1159000" />
       <workItem from="1767473828938" duration="902000" />
-      <workItem from="1767478128851" duration="987000" />
+      <workItem from="1767478128851" duration="1191000" />
     </task>
     <task id="LOCAL-00001" summary="coucou">
       <option name="closed" value="true" />
@@ -373,7 +371,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767474728608</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Last changes">
+      <option name="closed" value="true" />
+      <created>1767479143253</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1767479143253</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

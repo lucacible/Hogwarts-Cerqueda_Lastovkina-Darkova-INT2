@@ -97,7 +97,6 @@ def quidditch_match(character, houses):
             print("The Golden Snitch has appeared!")
             catching_team = catch_golden_snitch(player_team, opposing_team)
             print("{} catches the Golden Snitch! (+150 points)".format(catching_team['name']))
-            catching_team['score'] += 150
             display_score(player_team, opposing_team)
             print("The match is over! {} wins!".format(catching_team['name']))
             break
