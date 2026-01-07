@@ -47,33 +47,34 @@ def display_winning_house(houses):
 
 
 def assign_house(character, questions):
- 
-    house_score={
-    "Gryffindor":0,
-    "Slytherin":0,
-    "Hufflepuff":0,
-    "Ravenclaw":0
-    }
-
-    info = character["Attributes"]
-    house_score["Gryffindor"]= info["Courage"]*2
-    house_score["Slytherin"]=info["Ambition"]*2
-    house_score["Hufflepuff"]=info["Loyalty"]*2
-    house_score["Ravenclaw"]=info["Intelligence"]*2
+    house_score = {
+    "Gryffindor": 0,
+    "Slytherin": 0,
+    "Ravenclaw": 0,
+    "Hufflepuff": 0
+}
 
     i = 0
     for question, options, house in questions:
+        i = 0  
         choice_nb = ask_choice(question, options)
+
         while i < len(options):
-            if options[i] == choice_nb:
+            if i == choice_nb:  
                 final_house = house[i]
                 house_score[final_house] += 3
             i += 1
-        print('Final house scores:', house_score)
-        highest_score = None
-        winning_house = None
-        if highest_score == None or house_score[final_house] > highest_score:
+
+    print("Final house scores:", house_score)
+
+    highest_score = -1          
+    winning_house = None
+
+    for final_house in house_score:  
+        if house_score[final_house] > highest_score:
             highest_score = house_score[final_house]
             winning_house = final_house
-        return winning_house
 
+    return winning_house
+
+    
