@@ -26,7 +26,7 @@ def update_house_points(houses,house_name,points):
 
 def display_winning_house(houses):
     winning_house=[]
-    
+    score= -1
     for subkey,subvalue in houses.items():
         if subvalue>score:
             winning_house = [subkey]
