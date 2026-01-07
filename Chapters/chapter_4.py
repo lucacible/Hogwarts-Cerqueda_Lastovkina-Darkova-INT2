@@ -45,15 +45,10 @@ def golden_snitch_appears():
         return False
 
 def catch_golden_snitch(e1, e2):
-    random_chance = random.randint(e1, e2)
-    if random_chance == e1:
-        e1["caught_snitch"] = True
-        e1["score"] += 150
-        return e1
-    else:
-        e2["caught_snitch"] = True
-        e2["score"] += 150
-        return e2
+    winner = random.choice([e1,e2])
+    winner["caught_snitch"] = True
+    winner["score"] += 150
+    return winner
 
 def display_score(e1,e2):
     text = """

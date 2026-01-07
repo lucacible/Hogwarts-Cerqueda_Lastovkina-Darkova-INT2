@@ -3,6 +3,7 @@ from Chapters.chapter_1 import start_chapter_1
 from Chapters.chapter_2 import start_chapter_2
 from Chapters.chapter_3 import start_chapter_3
 from Chapters.chapter_4 import start_chapter_4_quidditch
+from universe.house import houses
 
 def display_main_menu():
     main_game_menu = """
@@ -15,7 +16,7 @@ def launch_menu_choice():
     choice = ask_choice(display_main_menu(), ["Start", "Exit"])
     if choice == 1:
         character = start_chapter_1()
-        houses = start_chapter_2(character)
+        start_chapter_2(character)
         start_chapter_3(character, houses)
         start_chapter_4_quidditch(character, houses)
     elif choice == 2:
