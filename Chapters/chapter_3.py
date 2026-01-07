@@ -76,6 +76,7 @@ def magic_quiz(character,file_path="data/magic_quiz.json"):
             print(f"Wrong answer. The correct answer was: {question["answer"]}")
     
     print(f"Score obtained {score}")
+    print()
     return score
     
 
