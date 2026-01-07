@@ -23,13 +23,13 @@ def learn_spells(character, file_path="data/spells.json"):
     
     offensive=random.choice(offensive_spells)
     print(f"You have just learned the spell:{offensive} (Offensive)")
-    add_item(character,character["Spells"],offensive)
+    add_item(character,"Spells",offensive)
     input("Press Enter to continue...")
     print()
 
     defensive=random.choice(defensive_spells)
     print(f"You have just learned the spell:{defensive} (Defensive)")
-    add_item(character,character["Spells"],defensive)
+    add_item(character,"Spells",defensive)
     input("Press Enter to continue...")
     print()
 
@@ -38,7 +38,7 @@ def learn_spells(character, file_path="data/spells.json"):
         print(f"You have just learned the spell:{utility} (Utility)")
         print()
         utility_spells.remove(utility)
-        add_item(character,character["Spells"],utility)
+        add_item(character,"Spells",utility)
         input("Press Enter to continue...")
         print()
 
