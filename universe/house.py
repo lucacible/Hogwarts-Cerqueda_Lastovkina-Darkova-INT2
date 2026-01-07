@@ -50,9 +50,9 @@ def assign_house(character, questions):
  
     house_score={
         "Gryffindor":0,
-    "Slytherin":0,
-    "Hufflepuff":0,
-    "Ravenclaw":0
+        "Slytherin":0,
+        "Hufflepuff":0,
+        "Ravenclaw":0
     }
 
     info = character["Attributes"]
