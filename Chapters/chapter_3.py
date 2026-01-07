@@ -86,5 +86,6 @@ def start_chapter_3(character, houses):
     score=magic_quiz(character)
     update_house_points(houses,character["House"],score)
     display_winning_house(houses)
+    print()
     display_character(character)
     return character, houses
