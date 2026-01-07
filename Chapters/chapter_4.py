@@ -67,7 +67,7 @@ def quidditch_match(character, houses):
     teams_quidditch = load_file('data/teams_quidditch.json')
     player_house = character['House']
 
-    
+    # ✅ Convert dict keys to a list for random.choice
     opposing_house = random.choice(list(houses.keys()))
     while player_house == opposing_house:
         opposing_house = random.choice(list(houses.keys()))
@@ -119,3 +119,25 @@ def quidditch_match(character, houses):
     print("Final Results:")
     display_score(player_team, opposing_team)
 
+
+def start_chapter_4_quidditch(character, houses):
+    text = """
+    The Quidditch season is about to begin at Hogwarts!
+
+As a new student, you will be guided through your first match.
+Get ready to take off, YOU WERE CHOSEN AS A SEEKER!
+    """
+    input(text)
+    quidditch_match(character, houses)
+    text2 = """
+    The Quidditch season is coming to an end.
+The game you showed was impressive! We are proud to have you in our team.
+⭐ Congratulations on completing Chapter 4: The Quidditch Match! ⭐
+
+Soooo, after all that time... we are about to announce the winner of the House Cap!
+    """
+    print(text2)
+    print("And the winning house is...")
+    display_winning_house(houses)
+    print("Also, here is your final information:")
+    display_character(character)
