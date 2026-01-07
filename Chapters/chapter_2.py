@@ -1,11 +1,8 @@
-
-
 from utils.input_utils import ask_choice, load_file
 from universe.house import *
 import json
 
 def meet_friends(character):
-
     text = """
     You board the Hogwarts Express. The train slowly departs northward...
 A red-haired boy enters your compartment, looking friendly.
@@ -20,7 +17,6 @@ How do you respond?
     else:
         character["Attributes"]["Ambition"] += 1
         print("Ron seems a bit sad: — It's okay, I won't disturb you more.")
-
 
     text = """
     A girl enters next, already carrying a stack of books.
@@ -98,9 +94,10 @@ The Sorting Hat observes you for a long time before asking its questions:
             ["Gryffindor", "Slytherin", "Hufflepuff", "Ravenclaw"]
         )
     ]
-    character["House"] = assign_house(character, questions)
+    house = assign_house(character, questions)
+    character['House'] = house
     print()
-    print("The Sorting Hat exclaims:", character["House"], "!!!")
+    print("The Sorting Hat exclaims:", house, "!!!")
 
 
 def enter_common_room(character):

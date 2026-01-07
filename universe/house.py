@@ -24,12 +24,10 @@ def update_house_points(houses,house_name,points):
    
 
 
-def display_winning_house(dico):   
-    
-    score=dico["Gryffindor"]
+def display_winning_house(houses):
     winning_house=[]
     
-    for subkey,subvalue in dico.items():
+    for subkey,subvalue in houses.items():
         if subvalue>score:
             winning_house = [subkey]
             score=subvalue
@@ -56,17 +54,12 @@ def assign_house(character, questions):
     "Hufflepuff":0,
     "Ravenclaw":0
     }
-    
-    for attri,value in character["Attributes"].items():
-        match attri:
-            case "Courage":
-                house_score["Gryffindor"]=  house_score["Gryffindor"]+value*2
-            case "Ambition":
-                house_score["Slytherin"]=house_score["Slytherin"]+2*value
-            case "Loyalty":
-                house_score["Hufflepuff"]=house_score["Hufflepuff"]+2*value
-            case "Intelligence":
-                house_score["Ravenclaw"]=house_score["Ravenclaw"]+2*value
+
+    info = character["Attributes"]
+    house_score["Gryffindor"]= info["Gryffindor"]*2
+    house_score["Slytherin"]=info["Slytherin"]*2
+    house_score["Hufflepuff"]=info["Hufflepuff"]*2
+    house_score["Ravenclaw"]=info["Ravenclaw"]*2
 
     i = 0
     for question, options, house in questions:

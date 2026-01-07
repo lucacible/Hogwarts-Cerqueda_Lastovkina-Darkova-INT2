@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7878a4f5-89d5-4869-bf0c-44778d35e72a" name="Changes" comment="Last changes" />
+    <list default="true" id="7878a4f5-89d5-4869-bf0c-44778d35e72a" name="Changes" comment="Last changes">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chapters/chapter_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Chapters/chapter_2.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,6 +21,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -52,7 +56,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -142,6 +146,10 @@
       <workItem from="1766338785998" duration="14383000" />
       <workItem from="1767053613698" duration="422000" />
       <workItem from="1767467898761" duration="782000" />
+      <workItem from="1767471835300" duration="1159000" />
+      <workItem from="1767473828938" duration="902000" />
+      <workItem from="1767478128851" duration="1191000" />
+      <workItem from="1767479386634" duration="1045000" />
     </task>
     <task id="LOCAL-00001" summary="coucou">
       <option name="closed" value="true" />
@@ -351,7 +359,63 @@
       <option name="project" value="LOCAL" />
       <updated>1767468532598</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Last changes">
+      <option name="closed" value="true" />
+      <created>1767472119356</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1767472119356</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Last changes">
+      <option name="closed" value="true" />
+      <created>1767474728608</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1767474728608</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Last changes">
+      <option name="closed" value="true" />
+      <created>1767479143253</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1767479143253</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Last changes">
+      <option name="closed" value="true" />
+      <created>1767479511463</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1767479511463</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Last changes">
+      <option name="closed" value="true" />
+      <created>1767479589958</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1767479589958</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Last changes">
+      <option name="closed" value="true" />
+      <created>1767479723321</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1767479723321</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Last changes">
+      <option name="closed" value="true" />
+      <created>1767480131799</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1767480131799</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -392,6 +456,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/pychatbot_Cerqueda_Lastovkina_Darkova_INT2$characters.coverage" NAME="characters Coverage Results" MODIFIED="1765527861637" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/universe" />
-    <SUITE FILE_PATH="coverage/pychatbot_Cerqueda_Lastovkina_Darkova_INT2$main.coverage" NAME="main Coverage Results" MODIFIED="1766356634949" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pychatbot_Cerqueda_Lastovkina_Darkova_INT2$main.coverage" NAME="main Coverage Results" MODIFIED="1767480150520" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

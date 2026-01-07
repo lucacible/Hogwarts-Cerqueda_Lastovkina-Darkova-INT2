@@ -1,5 +1,3 @@
-
-import json
 import random
 from utils.input_utils import load_file
 from universe.house import update_house_points, display_winning_house
@@ -72,18 +70,29 @@ def display_team(house, team):
 
 def quidditch_match(character, houses):
     teams_quidditch = load_file('data/teams_quidditch.json')
-    player_team = create_teams(character['House'], teams_quidditch[character['House']]['players'], is_player=True, player=character)
-    opposing_team = create_teams(random.choice(houses))    
-    display_team(player_team['name'], player_team)
-    display_team(opposing_team['name'], opposing_team)
+    player_house = character['House']
+    opposing_house = random.choice(houses)
+    while player_house == opposing_house:
+        opposing_house = random.choice(houses)
+    player_team = create_teams(player_house, teams_quidditch[player_house]['players'], is_player=True, player=character)
+    opposing_team = create_teams(opposing_house, teams_quidditch[opposing_house]['players'])
+    display_team(player_house, player_team)
+    display_team(opposing_house, opposing_team)
     print("You are playing for {} as a Seeker.".format(player_team['name']))
     rounds = 0
-    while rounds < 20:
+    while rounds <= 20:
         rounds += 1
         print("\n---- Round {} ----".format(rounds))
-        attempt_goal(player_team, opposing_team, player_is_seeker=True)
-        display_score(player_team, opposing_team)
-        if golden_snitch_appears():
+        counter_player_team = 0
+        counter_opposing_team = 0
+        if counter_player_team < counter_opposing_team or counter_player_team == counter_opposing_team:
+            attempt_goal(player_team, opposing_team, player_is_seeker=True)
+            display_score(player_team, opposing_team)
+        else:
+            attempt_goal(opposing_team, player_team, player_is_seeker=False)
+            display_score(opposing_team, player_team)
+        golden_snitch = golden_snitch_appears()
+        if golden_snitch == True:
             print("The Golden Snitch has appeared!")
             catching_team = catch_golden_snitch(player_team, opposing_team)
             print("{} catches the Golden Snitch! (+150 points)".format(catching_team['name']))
@@ -127,5 +136,5 @@ Soooo, after all that time... we are about to announce the winner of the House C
     print(text2)
     print("And the winning house is...")
     display_winning_house(houses)
-    print("Also, here is your updated information:")
+    print("Also, here is your final information:")
     display_character(character)
